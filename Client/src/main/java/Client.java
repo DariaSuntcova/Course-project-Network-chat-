@@ -57,16 +57,16 @@ public class Client extends JFrame implements ConnectionListener, ActionListener
 
         textArea.setEditable(false); //запрет редактирования
         textArea.setLineWrap(true); //перевод на новую строку
-        add(textArea, BorderLayout.CENTER);
+        add(textArea, BorderLayout.CENTER);  //поле чата по центру
 
 
-        add(fieldMsg, BorderLayout.SOUTH);
+        add(fieldMsg, BorderLayout.SOUTH); // поле ввода нового сообщения внизу
         fieldMsg.addActionListener(this);
 
 
-        add(fieldName, BorderLayout.NORTH);
+        add(fieldName, BorderLayout.NORTH); // поле имени вверху
 
-        setVisible(true);
+        setVisible(true); // видимость
         try {
             connection = new Connection(this, new Socket(IP, port));
         } catch (IOException e) {
@@ -86,7 +86,11 @@ public class Client extends JFrame implements ConnectionListener, ActionListener
 
     @Override
     public void receivedString(Connection connection, String string) {
-        printMsg(string, LogLvl.INFO);
+        if (string.equals("/exit")) {
+            connection.disconnect();
+        } else {
+            printMsg(string, LogLvl.INFO);
+        }
     }
 
     @Override
