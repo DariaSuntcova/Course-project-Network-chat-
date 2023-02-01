@@ -1,3 +1,7 @@
+package connection;
+
+import connection.Connection;
+
 public interface ConnectionListener {
 
     void connectionReady(Connection connection);

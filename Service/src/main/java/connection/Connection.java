@@ -1,6 +1,7 @@
+package connection;
+
 import java.io.*;
 import java.net.Socket;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 
@@ -57,6 +58,6 @@ public class Connection {
 
     @Override
     public String toString() {
-        return "Connection: " + socket.getInetAddress() + ": " + socket.getPort();
+        return "connection.Connection: " + socket.getInetAddress() + ": " + socket.getPort();
     }
 }
