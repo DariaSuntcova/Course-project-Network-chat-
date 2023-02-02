@@ -86,11 +86,7 @@ public class Client extends JFrame implements ConnectionListener, ActionListener
 
     @Override
     public void receivedString(Connection connection, String string) {
-        if (string.equals("exit")) {
-            connection.disconnect();
-        } else {
             printMsg(string, LogLvl.INFO);
-        }
     }
 
     @Override
