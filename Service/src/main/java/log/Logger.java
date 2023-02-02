@@ -10,7 +10,7 @@ public class Logger {
 
 
     public Logger(String name) {
-        this.path = "D:\\Online chat\\Logger\\" + name + "Log.txt";
+        this.path = name + "Log.txt";
         File logFile = new File(path);
         if (!logFile.exists()) {
             try {

@@ -18,7 +18,7 @@ public class Server implements ConnectionListener {
     public static void main(String[] args) {
 
         int port = 0;
-        try (FileInputStream fin = new FileInputStream("D:\\Online chat\\settings.txt")) {
+        try (FileInputStream fin = new FileInputStream("settings.txt")) {
             int i;
             while ((i = fin.read()) != -1) {
                 port = i;

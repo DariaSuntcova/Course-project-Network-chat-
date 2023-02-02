@@ -30,7 +30,7 @@ public class Client extends JFrame implements ConnectionListener, ActionListener
 
         logger = new Logger(nameClient);
 
-        try (FileInputStream fin = new FileInputStream("D:\\Online chat\\settings.txt")) {
+        try (FileInputStream fin = new FileInputStream("settings.txt")) {
             int port;
             while ((port = fin.read()) != -1) {
                 Client.port = port;
